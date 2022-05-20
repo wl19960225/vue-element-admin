@@ -53,15 +53,6 @@ new Vue({
   render: h => h(App)
 })
 Vue.directive('permission', {
-  bind(el, binding) {
-    const permission = binding.value// 获取v-permission的值
-    if (permission) {
-      const hasPermission = checkArray(permission)
-      if (!hasPermission) {
-        el.parentNode && el.parentNode.removeChild(el)// 没有权限情况下，移除DOM元素
-      }
-    }
-  },
   inserted(el, binding) {
     const permission = binding.value// 获取v-permission的值
     if (permission) {
@@ -70,15 +61,5 @@ Vue.directive('permission', {
         el.parentNode && el.parentNode.removeChild(el)// 没有权限情况下，移除DOM元素
       }
     }
-  },
-  update(el, binding) {
-    const permission = binding.value// 获取v-permission的值
-    if (permission) {
-      const hasPermission = checkArray(permission)
-      if (!hasPermission) {
-        el.parentNode && el.parentNode.removeChild(el)// 没有权限情况下，移除DOM元素
-      }
-    }
-    console.log(el, binding)
   }
 })

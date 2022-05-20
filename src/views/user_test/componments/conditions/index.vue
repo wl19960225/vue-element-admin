@@ -15,8 +15,6 @@
     <div class="conditions-wrapper_item"><span v-permission="token">手机号</span><el-input v-model="inputphone" v-permission="token" placeholder="手机号" /></div>
     <div class="conditions-wrapper_button"><el-button v-permission="token" type="primary" round>搜索</el-button></div>
     <div class="conditions-wrapper_button"><el-button v-permission="token" type="primary" round>重置</el-button></div>
-    <button @click="token1">反转字符串</button>
-
   </div>
 </template>
 
@@ -49,16 +47,8 @@ export default {
     }
   },
   methods: {
-    function() {
+    token() {
       const token = getToken().split('-')[0]
-      console.log('==========' + token)
-      console.log(typeof (token))
-      return token
-    },
-    token1: function() {
-      const token = getToken().split('-')[0]
-      console.log('==========' + token)
-      console.log(typeof (token))
       return token
     }
   }
